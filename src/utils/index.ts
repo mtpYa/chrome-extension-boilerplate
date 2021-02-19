@@ -1,4 +1,4 @@
 export const showScriptType = (scriptType: string): string => {
-  console.log(`Current stript type: ${scriptType}`);
+  console.log(`Current script type: ${scriptType}`);
   return scriptType;
 }

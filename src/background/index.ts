@@ -1,3 +1,12 @@
-import { showScriptType } from '../utils';
+chrome.runtime.onInstalled.addListener(() => {
+  console.log('on installed event');
+})
 
-showScriptType('background script');
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  chrome.scripting.executeScript({
+    target: { tabId: activeInfo.tabId },
+    files: ['test_script.js']
+  }, (data) => console.log(data) );
+})
+
+export {};
